@@ -1,3 +1,9 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
 .background-image {
     position: relative;
     background-image: url('img/srcbg.jpg');
@@ -23,7 +29,7 @@
 
 .overlay-text {
     position: absolute;
-    top: 30%; /* Main text position */
+    top: 30%;
     left: 50%;
     transform: translate(-50%, -50%);
     font-size: 5rem;
@@ -34,33 +40,42 @@
     z-index: 2;
 
     text-shadow: 2px 2px 4px rgba(0, 0, 0.5, 0.95); 
-    line-height: 1; /* Lowered line height */
+    line-height: 1.1;
 
     margin: 0; 
     padding: 0;
 }
 
-/* New text layer */
 .subtext {
     position: absolute;
-    top: 45%; /* Adjusted to be further below the main text */
+    top: calc(30% + 5rem);
     left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 2rem; /* Smaller font size for the subtext */
+    transform: translate(-50%, 0);
+    font-size: 2rem;
     color: white;
     font-family: "Dongle", sans-serif;
     font-weight: 400;
     text-align: center;
     z-index: 2;
 
-    text-shadow: 1px 1px 3px rgba(0, 0, 0.5, 0.7); /* Slight shadow for subtext */
-
+    text-shadow: 1px 1px 3px rgba(0, 0, 0.5, 0.7);
+    line-height: 1.5; 
+    
     margin: 0; 
     padding: 0;
+    max-height: 30%; 
+    overflow: hidden; 
 }
 
-html, body {
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
+@media (max-width: 768px) {
+    .overlay-text {
+        top: 20%;
+        font-size: 3rem; 
+    }
+
+    .subtext {
+        top: calc(20% + 3rem);
+        font-size: 1.5rem; 
+        max-height: 40%; 
+    }
 }
